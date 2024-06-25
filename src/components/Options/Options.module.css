@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+.button {
+    font-family: 'Briem Hand', sans-serif;
+    display: flex;
+    padding: 10px 25px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.greenButton {
+    border: 1px solid green;
+    background-color: green;
+    color: white;
+}
+
+.orangeButton {
+    border: 1px solid orange;
+    background-color: orange;
+    color: white;
+}
+
+.redButton {
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+}
+
+.resetButton {
+    border: 1px solid rgb(84, 1, 84);
+    background-color: rgb(84, 1, 84);
+    color: white;
+}

@@ -1,19 +1,14 @@
-import { useState } from "react";
+import css from './Options.module.css'
+import clsx from 'clsx'
 
-
-export default function Options() {
-    const [clicks, setClicks] = useState(0);
-
-    const handleClick = () => {
-       setClicks(clicks + 1);
-    };
+export default function Options({updateFeedback, handleReset, totalFeedback}) {
 
     return (
-        <div>
-            <button onClick={handleClick}>Good : {clicks}</button>
-            <button onClick={handleClick}>Neutral : {clicks}</button>
-            <button onClick={handleClick}>Bad : {clicks}</button>
-            <button onClick={handleClick}>Reset</button>
+        <div className={css.container}>
+            <button className={clsx(css.button, css.greenButton)} onClick={() => updateFeedback("good")}>Good</button>
+            <button className={clsx(css.button, css.orangeButton)} onClick={() => updateFeedback("neutral")}>Neutral</button>
+            <button className={clsx(css.button, css.redButton)} onClick={() => updateFeedback("bad")}>Bad</button>
+            {totalFeedback !== 0 ? <button className={clsx(css.button, css.resetButton)} onClick={handleReset}>Reset</button> : <div></div>}
         </div>
     );
  }
